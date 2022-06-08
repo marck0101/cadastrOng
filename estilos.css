@@ -1,0 +1,23 @@
+.alinhamento {
+  margin-top: 5px;
+  margin-left: 5px;
+  align-items: justify;
+  display: flex;
+  justify-content: space-between;
+}
+
+.borda {
+  border: 10px, solid;
+  margin: 50px;
+}
+
+.tabela {
+  width: 95%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pica {
+  padding: 2%;
+}
