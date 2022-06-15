@@ -6,9 +6,11 @@
   justify-content: space-between;
   /* background-color: aqua; */
   height: 35px;
+  /* display: flex; */
+  /* flex-direction: row-reverse; */
 }
 
-.alinhamentoLeft{
+.alinhamentoLeft {
   /* só para testes */
   background-color: aqua;
   display: flexbox;
@@ -16,7 +18,7 @@
 
 .borda {
   border: 10px, solid;
-  margin: 50px;
+  margin: 5%;
 }
 
 .tabela {
@@ -30,7 +32,35 @@
   padding: 2%;
 }
 
-.icon{
-  height: 30px;
-  width: 30px;
+.icon {
+  height: 50px;
+  width: 50px;
+}
+
+.teste {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 450px) {
+  .alinhamento {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 35px;
+    margin-top: 5px;
+    margin-left: 5px;
+    align-items: justify;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 390px) {
+  .alinhamento {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    display: -webkit-inline-box;
+  }
 }
