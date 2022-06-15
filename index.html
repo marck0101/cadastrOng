@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="scripts.js"></script>
   <title>CADASTRO</title>
-  <link rel="icon" type="image/jpg"  href="icons/icon.png">
+  <link rel="icon" type="image/jpg" href="icons/icon.png">
 
 </head>
 
@@ -22,9 +22,17 @@
     <h4>Cadastro Animais de Rua</h4>
     <div class="alinhamento">
       <button><img src="icons/soma.png" alt=""></button>
-      <div><input  style="font-size: 20px"/><button><img src="icons/lupa2.png" style="height: 35px;"><img></button></div>
+      <div style="display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;">
+        <input style="font-size: 20px">
+        <button>
+          <img src="icons/lupa2.png" style="height: 35px;">
+          <img>
+        </button>
+      </div>
     </div>
-     </div>
+  </div>
 
   <div class="pica">
 
@@ -51,7 +59,6 @@
           </tr>
       </tbody>
   </table> -->
-
       <table class="table">
         <thead>
           <tr>
@@ -59,6 +66,7 @@
             <th scope="col">NOME</th>
             <th scope="col">GÊNERO</th>
             <th scope="col">OBSERVAÇÃO</th>
+            <th scope="col">AÇÕES</th>
           </tr>
         </thead>
         <tbody>
@@ -67,6 +75,7 @@
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
+            <td><button><img src="icons/lapis.png" alt="editar"></button> <button><img src="icons/lixo.png" alt="excluir"></button></td>
           </tr>
           <tr>
             <th scope="row">2</th>
