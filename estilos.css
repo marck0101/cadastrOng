@@ -43,7 +43,7 @@
   flex-wrap: nowrap;
 }
 
-@media (max-width: 450px) {
+/* @media (max-width: 450px) {
   .alinhamento {
     display: flex;
     flex-direction: row-reverse;
@@ -53,8 +53,9 @@
     align-items: justify;
     display: flex;
     justify-content: space-between;
+    border-radius: 15px;
   }
-}
+} */
 
 @media (max-width: 390px) {
   .alinhamento {
@@ -62,5 +63,6 @@
     flex-wrap: nowrap;
     flex-direction: column;
     display: -webkit-inline-box;
+    border-radius: 15px;
   }
 }
