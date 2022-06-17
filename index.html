@@ -18,53 +18,53 @@
     <link rel="icon" type="image/jpg" href="icons/icon.png" />
   </head>
 
-<body>
+  <body>
     <div class="borda">
-        <h4>Cadastro Animais de Rua</h4>
-        <div class="alinhamento">
-            <button><img src="/icons/soma.png" alt="" /></button>
-            <div class="teste">
-                <input style="font-size: 20px" />
-                <button>
-                    <img src="/icons/lupa2.png" style="height: 35px" />
-                    <img />
-                </button>
-            </div>
+      <h4>Cadastro Animais de Rua</h4>
+      <div class="alinhamento">
+        <button onclick="teste()"><img src="icons/soma.png" alt="" /></button>
+        <div class="teste">
+          <input style="font-size: 20px" />
+          <button onclick="">
+            <img src="icons/lupa2.png" style="height: 35px" />
+            <img />
+          </button>
         </div>
+      </div>
 
-       <div class="pica">
-            <div class="col-lg-12 col-xs-12">
-                <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">NOME</th>
-                                <th scope="col">GÊNERO</th>
-                                <th scope="col">OBSERVAÇÃO</th>
-                                <th scope="col" colspan="2"></th>
-                            </tr>
-                        </thead>
-                        <tbody class="borda">
-                            <tr>
-                                <th scope="row"><?= $animal['cd_animal'] ?></th>
-                                <td><?= $animal['ds_nome_animal'] ?></td>
-                                <td><?= $animal['ds_nome_proprietario'] ?></td>
-                                <td><?= $animal['ds_observacoes'] ?></td>
-                                <td>
-                                    <button>
-                                        <img src="/icons/lapis.png" alt="editar" />
-                                    </button>
-                                </td>
-                                <td>
-                                    <button>
-                                        <img src="/icons/lixo.png" alt="excluir" />
-                                    </button>
-                                </td>
-                            </tr>
-                    </tbody>
-                </table>
-            </div>
-           </div>
+      <div class="pica">
+        <div class="col-lg-12 col-xs-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">NOME</th>
+                <th scope="col">GÊNERO</th>
+                <th scope="col">OBSERVAÇÃO</th>
+                <th scope="col" colspan="2"></th>
+              </tr>
+            </thead>
+            <tbody class="borda">
+              <tr>
+                <th scope="row"><?= $animal['cd_animal'] ?></th>
+                <td><?= $animal['ds_nome_animal'] ?></td>
+                <td><?= $animal['ds_nome_proprietario'] ?></td>
+                <td><?= $animal['ds_observacoes'] ?></td>
+                <td>
+                  <button>
+                    <img src="/icons/lapis.png" alt="editar" />
+                  </button>
+                </td>
+                <td>
+                  <button>
+                    <img src="/icons/lixo.png" alt="excluir" />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-</body>
+      </div>
+    </div>
+  </body>
 </html>
