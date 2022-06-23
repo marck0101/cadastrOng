@@ -1,0 +1,10 @@
+CRITICAL - 2022-05-21 16:58:01 --> Invalid file: <h1>Isso é um teste de página feita pór um maluco</h1>.php
+#0 C:\wamp64\www\ppi\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('<h1>Isso \xC3\xA9 um ...')
+#1 C:\wamp64\www\ppi\system\Common.php(1089): CodeIgniter\View\View->render('<h1>Isso \xC3\xA9 um ...', Array, true)
+#2 C:\wamp64\www\ppi\app\Controllers\Animais.php(10): view('<h1>Isso \xC3\xA9 um ...')
+#3 C:\wamp64\www\ppi\system\CodeIgniter.php(832): App\Controllers\Animais->index()
+#4 C:\wamp64\www\ppi\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Animais))
+#5 C:\wamp64\www\ppi\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\ppi\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\wamp64\www\ppi\system\Commands\Server\rewrite.php(43): require_once('C:\\wamp64\\www\\p...')
+#8 {main}

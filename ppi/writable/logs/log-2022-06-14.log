@@ -1,0 +1,8 @@
+CRITICAL - 2022-06-14 19:20:09 --> Call to undefined method App\Models\HistoricoVacinacaoModel::getAnimais
+#0 C:\wamp64\www\ppi\app\Controllers\Animais.php(32): CodeIgniter\Model->__call('getAnimais', Array)
+#1 C:\wamp64\www\ppi\system\CodeIgniter.php(832): App\Controllers\Animais->index()
+#2 C:\wamp64\www\ppi\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Animais))
+#3 C:\wamp64\www\ppi\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\ppi\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\wamp64\www\ppi\system\Commands\Server\rewrite.php(43): require_once('C:\\wamp64\\www\\p...')
+#6 {main}

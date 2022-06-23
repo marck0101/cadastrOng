@@ -1,0 +1,16 @@
+ERROR - 2022-06-18 12:06:44 --> Error connecting to the database: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+
+CRITICAL - 2022-06-18 12:06:44 --> Unable to connect to the database.
+Main connection [MySQLi]: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+
+#0 C:\wamp64\www\ppi\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\wamp64\www\ppi\system\Database\BaseBuilder.php(1539): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#2 C:\wamp64\www\ppi\system\Model.php(509): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#3 C:\wamp64\www\ppi\system\BaseModel.php(1084): CodeIgniter\Model->countAllResults(false)
+#4 C:\wamp64\www\ppi\app\Controllers\Animais.php(19): CodeIgniter\BaseModel->paginate(6)
+#5 C:\wamp64\www\ppi\system\CodeIgniter.php(832): App\Controllers\Animais->index()
+#6 C:\wamp64\www\ppi\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Animais))
+#7 C:\wamp64\www\ppi\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\ppi\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\wamp64\www\ppi\system\Commands\Server\rewrite.php(43): require_once('C:\\wamp64\\www\\p...')
+#10 {main}
