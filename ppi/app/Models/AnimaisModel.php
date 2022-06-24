@@ -16,7 +16,7 @@ class AnimaisModel extends Model {
         'ds_nome_proprietario',
         'nr_cpf_proprietario',
         'ds_endereco',
-        'ds_telefone',
+        'nr_telefone',
         'ds_observacoes',
         'cd_carteira_vacinacao',
         'x_ativo',
@@ -39,15 +39,15 @@ class AnimaisModel extends Model {
     /**
      * Busca os registros dos animais
      */
-    public function getAnimais( $id = false){
-        if($id === false){
+    public function getAnimais( $cd_animal = false){
+        if($cd_animal === false){
             return $this->select('animais.*, status.ds_nome_status')
                 ->join('status', 'animais.cd_status = status.cd_status')
                 ->orderBy('updated_at', 'desc')
                 ->findAll();
         } else {
             return $this->asArray()
-                ->where('id', $id)
+                ->where('cd_animal', $cd_animal)
                 ->first();
         }
     }

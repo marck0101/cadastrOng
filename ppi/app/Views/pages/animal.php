@@ -1,8 +1,7 @@
 <body>
     <div class="borda">
         <h4><?= $title_page ?></h4>
-
-
+        <button type="button" class="btn btn-primary"  onclick="location.href='/'">Voltar</button>
         <div class="pica">
             <div class="col-lg-12 col-xs-12">
                 <div class="card-body">
@@ -15,60 +14,64 @@
                         <?= \Config\Services::validation()->listErrors(); ?>
                     </div>
 
-                    <form action="<?=base_url('animal/save')?>" method="post" enctype="multipart/form-data">
+                    <form action="<?=base_url('animal/save')?>" method="post">
                         <h1>Animal:</h1>
                         <div class="form-group">
-                            <label for="nomeAnimal">Nome:</label>
-                            <input type="text" name="nomeAnimal" id="nomeAnimal" class="form-control" value="<?= isset($animal['nomeAnimal']) ? $animal['nomeAnimal'] : '' ?>">
+                            <label for="ds_nome_animal">Nome:</label>
+                            <input type="text" name="ds_nome_animal" id="ds_nome_animal" class="form-control" value="<?= isset($animal['ds_nome_animal']) ? $animal['ds_nome_animal'] : '' ?>">
                         </div>
                         <div class="form-group">
-                            <label for="racaAnimal">Raça:</label>
-                            <input type="text" name="racaAnimal" id="racaAnimal" class="form-control" value="<?= isset($animal['racaAnimal']) ? $animal['racaAnimal'] :  '' ?>">
+                            <label for="ds_raca">Raça:</label>
+                            <input type="text" name="ds_raca" id="ds_raca" class="form-control" value="<?= isset($animal['ds_raca']) ? $animal['ds_raca'] :  '' ?>">
                         </div>
                         <div class="form-group">
-                            <label for="generoAnimal">Sexo</label>
-                            <select name="generoAnimal" class='form-control'>
-                                <option value="" <?= (!isset($animal['ds_sexo']) ? 'selected' : '') ?>></option>
+                            <label for="ds_sexo">Gênero</label>
+                            <select name="ds_sexo" class='form-control'>
+                                <option value="" <?=(!isset($animal['ds_sexo']) ? '' : 'selected') ?>></option>
                                 <option value="M" <?= (isset($animal['ds_sexo']) and $animal['ds_sexo'] == 'M' ? 'selected' : '') ?>>Masculino</option>
                                 <option value="F" <?= (isset($animal['ds_sexo']) and $animal['ds_sexo'] == 'F' ? 'selected' : '') ?>>Femininino</option>
                             </select>
                         </div>
-                        <div class='form-group'>
-                            <label for='img'>Imagem</label><br />
-                            <!-- O TYPE PARA ENVIAR ARQUIVOS POR FORMULÁRIO É file -->
-                            <input name='img' type='file' class='form-control'>
-                        </div>
                         <div class="form-group">
-                            <label for="corAnimal">Cor:</label>
-                            <select name="corAnimal" class='form-control'>
-                                <option value="" <?= !isset($animal['corAnimal']) ? 'selected' : '' ?>></option>
-                                <option value="preto" <?= isset($animal['corAnimal']) and $animal['corAnimal'] == 'preto' ? 'selected' : '' ?>>Preto</option>
-                                <option value="branco" <?= isset($animal['corAnimal']) and $animal['corAnimal'] == 'branco' ? 'selected' : '' ?>>Branco</option>
-                                <option value="caramelo" <?= isset($animal['corAnimal']) and $animal['corAnimal'] == 'caramelo' ? 'selected' : '' ?>>Caramelo</option>
-                                <option value="cinzento" <?= isset($animal['corAnimal']) and $animal['corAnimal'] == 'cinzento' ? 'selected' : '' ?>>Cinzento</option>
-                                <option value="outro" <?= isset($animal['corAnimal']) and $animal['corAnimal'] == 'outro' ? 'selected' : '' ?>>Outro</option>
+                            <label for="ds_cor">Cor:</label>
+                            <select name="ds_cor" class='form-control'>
+                                <option value="" <?= !isset($animal['ds_cor']) ? 'selected' : '' ?>></option>
+                                <option value="preto" <?= isset($animal['ds_cor']) and $animal['ds_cor'] == 'preto' ? 'selected' : '' ?>>Preto</option>
+                                <option value="branco" <?= isset($animal['ds_cor']) and $animal['ds_cor'] == 'branco' ? 'selected' : '' ?>>Branco</option>
+                                <option value="caramelo" <?= isset($animal['ds_cor']) and $animal['ds_cor'] == 'caramelo' ? 'selected' : '' ?>>Caramelo</option>
+                                <option value="cinzento" <?= isset($animal['ds_cor']) and $animal['ds_cor'] == 'cinzento' ? 'selected' : '' ?>>Cinzento</option>
+                                <option value="outro" <?= isset($animal['ds_cor']) and $animal['ds_cor'] == 'outro' ? 'selected' : '' ?>>Outro</option>
                             </select>
                         </div>
                         <div class='form-group'>
-                            <label for='observacoes'>Observações:</label>
-                            <textarea name='observacoes' rows="10" class='form-control'><?= isset($noticias['observacoes']) ? $noticias['observacoes'] :  '' ?></textarea>
+                            <label for='ds_endereco'>Observações:</label>
+                            <textarea name='ds_endereco' rows="10" class='form-control'><?= isset($noticias['ds_endereco']) ? $noticias['ds_endereco'] :  '' ?></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="cd_status">Status</label>
+                            <select name="cd_status" class='form-control'>
+                            <option value="1"></option>
+                                <?php foreach($status as $status_item): ?>
+                                    <option value="<?=$status_item['cd_status']?>" <?= isset($animal['cd_status']) and $animal['cd_status'] == $status_item['cd_status'] ? 'selected' : '' ?>><?=$status_item['ds_nome_status']?></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
                         <h1>Proprietário:</h1>
                         <div class="form-group">
-                            <label for="nomeProprietario">Nome:</label>
-                            <input type="text" name="nomeProprietario" id="nomeProprietario" class="form-control" value="<?= isset($animal['nomeProprietario']) ? $animal['nomeProprietario'] : '' ?>">
+                            <label for="ds_nome_proprietario">Nome:</label>
+                            <input type="text" name="ds_nome_proprietario" id="ds_nome_proprietario" class="form-control" value="<?= isset($animal['ds_nome_proprietario']) ? $animal['ds_nome_proprietario'] : '' ?>">
                         </div>
                         <div class="form-group">
-                            <label for="telefoneProprietario">Contato:</label>
-                            <input type="text" name="telefoneProprietario" id="telefoneProprietario" class="form-control" value="<?= isset($animal['telefoneProprietario']) ? $animal['telefoneProprietario'] : '' ?>">
+                            <label for="nr_telefone">Contato:</label>
+                            <input type="text" name="nr_telefone" id="nr_telefone" class="form-control" value="<?= isset($animal['nr_telefone']) ? $animal['nr_telefone'] : '' ?>">
                         </div>
                         <div class="form-group">
-                            <label for="enderecoProprietario">Endereço:</label>
-                            <input type="text" name="enderecoProprietario" id="enderecoProprietario" class="form-control" value="<?= isset($animal['enderecoProprietario']) ? $animal['enderecoProprietario'] :  '' ?>">
+                            <label for="ds_endereco">Endereço:</label>
+                            <input type="text" name="ds_endereco" id="ds_endereco" class="form-control" value="<?= isset($animal['ds_endereco']) ? $animal['ds_endereco'] :  '' ?>">
                         </div>
                         <div class="form-group">
-                            <label for="cpfProprietario">CPF:</label>
-                            <input type="text" name="cpfProprietario" id="cpfProprietario" class="form-control" value="<?= isset($animal['cpfProprietario']) ? $animal['cpfProprietario'] :  '' ?>">
+                            <label for="nr_cpf_proprietario">CPF:</label>
+                            <input type="text" name="nr_cpf_proprietario" id="nr_cpf_proprietario" class="form-control" value="<?= isset($animal['nr_cpf_proprietario']) ? $animal['nr_cpf_proprietario'] :  '' ?>">
                         </div>
                         <input type="hidden" value="<?=isset($animal['id']) ? $animal['id']: '0' ?>" name="id">
                         <input type="submit" value="Salvar" name="submit" class="btn btn-primary">
@@ -79,24 +82,3 @@
         </div>
     </div>
 </body>
-
-
-<script src="/js/tinymce/tinymce.min.js"></script>
-<script>
-    tinymce.init({ 
-        language: 'pt_BR',
-        selector:'textarea',
-        theme: 'modern',
-        plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount   imagetools contextmenu colorpicker textpattern code',
-        toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat code',
-        image_advtab: true,
-        templates: [
-            { title: 'Test template 1', content: 'Test 1' },
-            { title: 'Test template 2', content: 'Test 2' }
-        ],
-        content_css: [
-            '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-            '//www.tinymce.com/css/codepen.min.css'
-        ]
-        });
-</script>

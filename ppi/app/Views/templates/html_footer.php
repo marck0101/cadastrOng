@@ -2,12 +2,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
 
-            console.log('teste');
-            $('.editar').click(function() {
-                // Get the id of selected phone and assign it in a variable called phoneData
-                var phoneData = $(this).attr('id');
-                console.log(phoneData);
-            });
+            
         });
     </script>
 
